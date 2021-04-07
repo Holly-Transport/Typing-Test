@@ -17,12 +17,12 @@ list = words.WordList()
 def timer ():
     global count
     global score
-    score = 0
     count -=1
     canvas.itemconfig(timer_text, text=f"{count}")
     if count == 0:
         check()
         count = 60
+        score = 0
     else:
         canvas.after(1000, timer)
 
@@ -71,7 +71,7 @@ start_button = Button(text = "Start!", font = ('didot', 24), relief = "raised", 
 start_button.grid(column=1, row = 4, columnspan =2)
 
 # Typing Text Field
-text = Text(height=20, width= 50)
+text = Text(height=20, width= 50, font=("courier",20))
 text.focus()
 text.grid(column=3, row=3)
 
